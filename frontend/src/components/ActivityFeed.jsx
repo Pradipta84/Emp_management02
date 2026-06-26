@@ -37,7 +37,8 @@ function ActivityFeed({ isOpen, onClose }) {
     }, []);
 
     useEffect(() => {
-        const socket = io('http://localhost:5000');
+        const API_BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
+        const socket = io(API_BASE_URL);
 
         socket.on('initial_activities', (data) => {
             setActivities(data);

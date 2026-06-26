@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 // Use window.location.hostname to support network access
+const API_BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
+
 const API = axios.create({
-    baseURL: `http://${window.location.hostname}:5000/api`
+    baseURL: `${API_BASE_URL}/api`
 });
 
 export const getEmployees = () => API.get('/employees');

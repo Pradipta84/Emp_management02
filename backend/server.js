@@ -11,7 +11,7 @@ const io = new Server(server, {
         methods: ["GET", "POST", "PUT", "DELETE"]
     }
 });
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const pool = require('./config/db');
 
