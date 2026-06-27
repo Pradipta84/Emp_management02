@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 // Use window.location.hostname to support network access
-const API_BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
+// Remove any trailing slash from the VITE_API_URL to prevent double-slash (404) errors
+let API_BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
+if (API_BASE_URL.endsWith('/')) {
+    API_BASE_URL = API_BASE_URL.slice(0, -1);
+}
 
 const API = axios.create({
     baseURL: `${API_BASE_URL}/api`
