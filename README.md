@@ -26,12 +26,13 @@ A full-stack, real-time employee directory built with modern web technologies. T
    ```bash
    npm install
    ```
-3. Create a `.env` file in the `backend` folder with your MySQL credentials:
+3. Create a `.env` file in the `backend` folder with your MySQL credentials (e.g., Aiven Cloud DB):
    ```
-   DB_HOST=localhost
-   DB_USER=root
-   DB_PASS=your_mysql_password
-   DB_NAME=emp_db02
+   DB_HOST=mysql-1fce6a6c-...aivencloud.com
+   DB_USER=avnadmin
+   DB_PASS=your_aiven_password
+   DB_NAME=defaultdb
+   DB_PORT=25434
    ```
 4. Start the backend server:
    ```bash
